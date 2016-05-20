@@ -20,10 +20,17 @@
 		<property name="format_sql">true</property>
 		<property name="use_sql_comments">true</property>
 
-		<property name="hbm2ddl.auto">update</property>
+
+		<!-- validate: validate the schema, makes no changes to the database. -->
+		<!-- update: update the schema. -->
+		<!-- create: creates the schema, destroying previous data. -->
+		<!-- create-drop: drop the schema at the end of the session. -->
+		<property name="hbm2ddl.auto">create-drop</property>
 
 		<!-- Names the annotated entity class -->
 		<mapping class="br.dagostini.comum.Colaborador" />
+		<mapping class="br.dagostini.persistencia.onetomany.Setor" />
+		<mapping class="br.dagostini.persistencia.onetomany.Empregado" />
 
 	</session-factory>
 </hibernate-configuration>
